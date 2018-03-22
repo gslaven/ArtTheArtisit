@@ -1,0 +1,145 @@
+:root {
+  /*Text and Background Vasriables to hopefully make styling a little easier
+  */
+  --Text: whitesmoke;
+  --DareDevil: rgb(138, 6, 22);
+  --HellBoy: rgb(8, 1, 2);
+  --IronMan: rgb(175, 31, 36);
+  --GreenLantern: rgb(139, 163, 49);
+  --TheHulk: rgb(141, 155, 60);
+  --GreenHornet: rgb(56, 84, 3);
+  --DrManHattan: rgb(22, 170, 76);
+  --SuperMan: rgb(33, 127, 190);
+  --CaptAmerica: rgb(37, 102, 151);
+}
+
+body {
+  background-image: url("Images/BlackPantherBackGround.jpg");
+  width: 100%;
+  height: 100%;
+  font-size: 40px;
+  padding: 5px;
+  font-variant: small-caps;
+  text-align: center;
+  color: var(--Text);
+}
+
+form {
+  background-color: var(--CaptAmerica)
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.DareDevil {
+  background-color: var(--DareDevil);
+}
+
+.HellBoy {
+  background-color: var(--HellBoy);
+}
+
+.IronMan {
+  background-color: var(--IronMan);
+}
+
+.GreenLantern {
+  background-color: var(--GreenLantern);
+}
+
+.TheHulk {
+  background-color: var(--TheHulk);
+}
+
+.GreenHornet {
+  background-color: var(--GreenHornet);
+}
+
+.DrManHattan {
+  background-color: var(--DrManHattan);
+}
+
+.SuperMan {
+  background-color: var(--SuperMan);
+}
+
+.CaptAmerica {
+  background-color: var(--CaptAmerica);
+}
+
+div {
+  height: 100%;
+  width: 100%;
+  font-size: 40px;
+  padding: 5px;
+  font-variant: small-caps;
+  text-align: center;
+  color: var(--Text);
+}
+
+/*Layout shifter
+https: //developers.google.com/web/fundamentals/design-and-ux/responsive/patterns?hl=en#column_drop
+The layout shifter pattern is the most responsive pattern, with multiple breakpoints across several screen widths.
+
+Key to this layout is the way content moves about, instead of reflowing and dropping below other columns. Due to the significant differences between each major breakpoint, it is more complex to maintain and likely involves changes within elements, not just overall content layout.
+
+This simplified example shows the layout shifter pattern, on smaller screens content is stacked vertically, but changes significantly as the screen becomes larger, with a left div and two stacked div's on the right.
+*/
+
+.container {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  width: 100%;
+}
+
+.c1,
+.c2,
+.c3,
+.c4 {
+  width: 100%;
+}
+
+@media (min-width: 600px) {
+  .c1 {
+    width: 25%;
+  }
+  .c4 {
+    width: 75%;
+  }
+}
+
+@media (min-width: 800px) {
+  .container {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
