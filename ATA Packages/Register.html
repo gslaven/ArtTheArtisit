@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>ASAP-Register</title>
+  	<script>
+	function show1()
+	{
+  		document.getElementById('months').style.display ='none';
+	}
+	function show2()
+	{
+  		document.getElementById('months').style.display = 'block';
+	}  
+	
+	function other(middleSchool) {
+		console.log(middleSchool);
+	 if (middleSchool==6) {
+		document.getElementById('otherSchool').style.display = 'block';
+	 }
+	 else document.getElementById('otherSchool').style.display = 'none';
+	 }
+
+
+
+	</script>
+  	<style>
+	.page
+	{
+		background-color: #3C4858;
+		font-family: Verdana;
+		color: white;
+		
+	 }
+	 .button1
+	{
+		color: white;
+		font-family:Verdana;
+		background-color:#8a0616;
+		width:auto;
+		border-radius: 5px;
+		border-radius: 5px;
+		padding:5px;
+		border:2px solid whitesmoke;
+	}
+
+	.hide
+	{
+  		display: none;
+	}
+	</style>
+
+<body class="page">
+
+<h2>Register</h2>
+<!-- //Need to tie this to the backend//
+<form action="/action_page.php"> -->
+	<div>
+	Parents First name:<br>
+	<input type="text" name="pfirstname" value="">
+	<br><br>
+	Parents Last name:<br>
+	<input type="text" name="plastname" value="">
+	<br><br>
+	Childs First name:<br>
+	<input type="text" name="cfirstname" value="">
+	<br><br>
+	Childs Last name:<br>
+	<input type="text" name="clastname" value="">
+	<br><br>
+	Class Package<br>
+	<input type="radio" name="class" value="fYear" onclick="show1();" checked> Full Year<br>
+	<input type="radio" name="class" value="hYear" onclick="show1();"> Half Year<br>
+	<input type="radio" name="class" value="month" onclick="show2();"> Month<br>
+	<div id="months" class="hide">
+		<select> 
+			<option> January </option>
+			<option> February </option>
+			<option> March </option>
+			<option> April </option> 
+		</select>	
+	</div>	  
+</div>
+	<br>	  
+	<br>
+	Child's Middle School<br>
+	<select id="middleSchool" onchange="other(middleSchool.value);"> 
+			<option value=1> Grovetown Middle School </option>
+			<option value=2> Columbia Middle School </option>
+			<option value=3> Greenbrier Middle School </option>
+			<option value=4> Riverside Middle School </option> 
+			<option value=5> Evans Middle School </option> 
+			<option value=6> Other </option> 
+		</select>
+		<br>	
+	<div id="otherSchool" class="hide">
+		<input type="text"  value="">
+	</div>	
+	<br>
+	
+  <input class="button1" type="submit" value="Submit">
+</form> 
+</div>
+
+</html>
