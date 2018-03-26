@@ -1,105 +1,216 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
 	<title>ASAP-Register</title>
-  	<script>
-	function show1()
-	{
-  		document.getElementById('months').style.display ='none';
-	}
-	function show2()
-	{
-  		document.getElementById('months').style.display = 'block';
-	}  
-	
-	function other(middleSchool) {
-		console.log(middleSchool);
-	 if (middleSchool==6) {
-		document.getElementById('otherSchool').style.display = 'block';
-	 }
-	 else document.getElementById('otherSchool').style.display = 'none';
-	 }
+	<script>
+		function show1() {
+			document.getElementById('months').style.display = 'none';
+			document.getElementById('half').style.display = 'none';
+		}
 
+		function show2() {
+			document.getElementById('months').style.display = 'block';
+			document.getElementById('half').style.display = 'none';
+		}
 
+		function show3() {
+			document.getElementById('half').style.display = 'block';
+			document.getElementById('months').style.display = 'none';
+		}
 
+		function other(middleSchool) {
+			console.log(middleSchool);
+			if (middleSchool == 6) {
+				document.getElementById('otherSchool').style.display = 'block';
+			} else document.getElementById('otherSchool').style.display = 'none';
+		}
 	</script>
-  	<style>
-	.page
-	{
-		background-color: #3C4858;
-		font-family: Verdana;
-		color: white;
-		
-	 }
-	 .button1
-	{
-		color: white;
-		font-family:Verdana;
-		background-color:#8a0616;
-		width:auto;
-		border-radius: 5px;
-		border-radius: 5px;
-		padding:5px;
-		border:2px solid whitesmoke;
-	}
+	<style>
+		.page {
+			background-color: #1c1c1c;
+			font-family: Verdana;
+			color: white;
+			/* display: flex; */
+			justify-content: center;
+		}
 
-	.hide
-	{
-  		display: none;
-	}
+		.c4 {
+			width: 150px;
+			/* justify-content:center;  */
+			/* border:hotpink 1px solid;  */
+			text-align: center;
+			align-self: center;
+			margin: auto;
+		}
+
+		.form {
+			margin-top: 40px;
+			/* border: hotpink 1px solid; */
+			text-align: center;
+		}
+
+		.h2 {
+			text-align: center;
+			/* border: hotpink solid 1px; */
+			margin-top: 70px;
+		}
+
+		.button1 {
+			color: white;
+			font-family: Verdana;
+			background-color: #8a0616;
+			width: auto;
+			border-radius: 5px;
+			border-radius: 5px;
+			padding: 5px;
+			border: 2px solid whitesmoke;
+		}
+
+		.hide {
+			display: none;
+		}
 	</style>
 
-<body class="page">
 
-<h2>Register</h2>
-<!-- //Need to tie this to the backend//
-<form action="/action_page.php"> -->
-	<div>
-	Parents First name:<br>
-	<input type="text" name="pfirstname" value="">
-	<br><br>
-	Parents Last name:<br>
-	<input type="text" name="plastname" value="">
-	<br><br>
-	Childs First name:<br>
-	<input type="text" name="cfirstname" value="">
-	<br><br>
-	Childs Last name:<br>
-	<input type="text" name="clastname" value="">
-	<br><br>
-	Class Package<br>
-	<input type="radio" name="class" value="fYear" onclick="show1();" checked> Full Year<br>
-	<input type="radio" name="class" value="hYear" onclick="show1();"> Half Year<br>
-	<input type="radio" name="class" value="month" onclick="show2();"> Month<br>
-	<div id="months" class="hide">
-		<select> 
-			<option> January </option>
-			<option> February </option>
-			<option> March </option>
-			<option> April </option> 
-		</select>	
-	</div>	  
-</div>
-	<br>	  
-	<br>
-	Child's Middle School<br>
-	<select id="middleSchool" onchange="other(middleSchool.value);"> 
-			<option value=1> Grovetown Middle School </option>
-			<option value=2> Columbia Middle School </option>
-			<option value=3> Greenbrier Middle School </option>
-			<option value=4> Riverside Middle School </option> 
-			<option value=5> Evans Middle School </option> 
-			<option value=6> Other </option> 
-		</select>
-		<br>	
-	<div id="otherSchool" class="hide">
-		<input type="text"  value="">
-	</div>	
-	<br>
-	
-  <input class="button1" type="submit" value="Submit">
-</form> 
-</div>
+
+
+	<script>
+		// ask james if this breaks
+		var webUrl = window.location.href;
+		var something = "";
+		for (var i = 0; i < webUrl.length; i++) {
+			if (webUrl[i] === 'c' && webUrl[i + 1] === 'o' && webUrl[i + 2] === 'u' && webUrl[i + 3] === 'r' && webUrl[i + 4] ===
+				's' && webUrl[i + 5] === 'e' && webUrl[i + 6] === '=' && webUrl[i + 7] === 'm') {
+				something = webUrl[i] + webUrl[i + 1] + webUrl[i + 2] + webUrl[i + 3] + webUrl[i + 4] + webUrl[i + 5] + webUrl[i +
+					6] + webUrl[i + 7];
+				break;
+			} //endif
+			if (webUrl[i] === 'c' && webUrl[i + 1] === 'o' && webUrl[i + 2] === 'u' && webUrl[i + 3] === 'r' && webUrl[i + 4] ===
+				's' && webUrl[i + 5] === 'e' && webUrl[i + 6] === '=' && webUrl[i + 7] === 'h') {
+				something = webUrl[i] + webUrl[i + 1] + webUrl[i + 2] + webUrl[i + 3] + webUrl[i + 4] + webUrl[i + 5] + webUrl[i +
+					6] + webUrl[i + 7];
+				break;
+			} //endif
+			if (webUrl[i] === 'c' && webUrl[i + 1] === 'o' && webUrl[i + 2] === 'u' && webUrl[i + 3] === 'r' && webUrl[i + 4] ===
+				's' && webUrl[i + 5] === 'e' && webUrl[i + 6] === '=' && webUrl[i + 7] === 'f') {
+				something = webUrl[i] + webUrl[i + 1] + webUrl[i + 2] + webUrl[i + 3] + webUrl[i + 4] + webUrl[i + 5] + webUrl[i +
+					6] + webUrl[i + 7];
+				break;
+			} //endif
+		} //endfor
+		window.onload = function () {
+			if (something === "course=m") {
+				document.getElementById("month").checked = true;
+				document.getElementById('months').style.display = 'block';
+			} //endif
+			else if (something === "course=f") {
+				document.getElementById("fYear").checked = true;
+			} //endif
+			else if (something === "course=h") {
+				document.getElementById("hYear").checked = true;
+				document.getElementById('half').style.display = 'block';
+			} //endif
+			console.log(something);
+		}
+	</script>
+	<!-- //Need to tie this to the backend// -->
+
+	<body class="page">
+		<div class="h2">
+			<h2>Register</h2>
+		</div>
+
+		<div class="form">
+			<form action="#">
+				<div class="c1">
+					Parent's First name:
+					<br>
+					<input type="text" name="pfirstname" value="">
+					<br>
+					<br> Parent's Last name:
+					<br>
+					<input type="text" name="plastname" value="">
+					<br>
+					<br>
+				</div>
+				<div class="c2">
+					Child's First name:
+					<br>
+					<input type="text" name="cfirstname" value="">
+					<br>
+					<br> Child's Last name:
+					<br>
+					<input type="text" name="clastname" value="">
+					<br>
+					<br>
+				</div>
+				<div class="c3">
+					Email:
+					<br>
+					<input type="text" name="email" value="">
+					<br>
+					<br> Phone Number:
+					<br>
+					<input type="tel" name="tel" value="" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+					<br>
+					<br>
+				</div>
+				<div class="c4">
+					Class Length:
+					<br>
+					<div style="text-align:left;">
+						<input type="radio" id="fYear" name="course" value="fYear" onclick="show1();"> Full Year
+						<br>
+						<input type="radio" id="hYear" name="course" value="hYear" onclick="show3();"> Half Year
+						<br>
+						<div id="half" class="hide">
+							<select>
+								<option> Fall </option>
+								<option> Spring </option>
+							</select>
+						</div>
+						<input type="radio" id="month" name="course" value="month" onclick="show2();"> Month
+						<br>
+						<div id="months" class="hide">
+							<select>
+								<option> January </option>
+								<option> February </option>
+								<option> March </option>
+								<option> April </option>
+								<option> September </option>
+								<option> October </option>
+								<option> November </option>
+								<option> December </option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<br>
+				<div>
+					Child's Middle School
+					<br>
+					<select id="middleSchool" onchange="other(middleSchool.value);">
+						<option value=1> Grovetown Middle School </option>
+						<option value=2> Columbia Middle School </option>
+						<option value=3> Greenbrier Middle School </option>
+						<option value=4> Riverside Middle School </option>
+						<option value=5> Evans Middle School </option>
+						<option value=6> Other </option>
+					</select>
+					<br>
+					<br>
+					<div id="otherSchool" class="hide">
+						<input type="text" value="">
+					</div>
+					<br>
+				</div>
+				<input class="button1" type="submit" value="Register & Pay Now">
+				<input class="button1" type="submit" value="Register & Pay Later">
+			</form>
+		</div>
+
+	</body>
 
 </html>
