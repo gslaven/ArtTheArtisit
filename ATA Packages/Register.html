@@ -5,26 +5,71 @@
 
 	<title>ASAP-Register</title>
 	<script>
+		//This below must match EXACTLY to Paypal's selection text
+		var PayPalYearText = "Year";
+		var PayPalHalfYearText = "Half Year";
+		var PayPalMonthText = "Month";
+
 		function show1() {
 			document.getElementById('months').style.display = 'none';
 			document.getElementById('half').style.display = 'none';
+			// This corresponds to the $400 class
+			//This below must match EXACTLY to Paypal's selection text
+			document.getElementById('PayPalClassAmount').value =
+				PayPalYearText;
+
 		}
 
 		function show2() {
 			document.getElementById('months').style.display = 'block';
 			document.getElementById('half').style.display = 'none';
+			// This corresponds to the $150 class
+			//This below must match EXACTLY to Paypal's selection text
+			document.getElementById('PayPalClassAmount').value =
+				PayPalMonthText;
+			// set the month paypal text box
+			setMonth();
 		}
 
 		function show3() {
 			document.getElementById('half').style.display = 'block';
 			document.getElementById('months').style.display = 'none';
+			// This corresponds to the $200 class
+			//This below must match EXACTLY to Paypal's selection text
+			document.getElementById('PayPalClassAmount').value = PayPalHalfYearText;
+			// set the half year paypal text box
+			setHalfYear();
 		}
 
 		function other(middleSchool) {
-			console.log(middleSchool);
-			if (middleSchool == 6) {
+			if (middleSchool == "Other") {
 				document.getElementById('otherSchool').style.display = 'block';
-			} else document.getElementById('otherSchool').style.display = 'none';
+				SetPayPalSchoolText("");
+			} else {
+				document.getElementById('otherSchool').style.display = 'none';
+				SetPayPalSchoolText(middleSchool);
+			}
+		}
+
+		function SetPayPalSchoolText(SchText) {
+			console.log("In SetPayPalSchoolText")
+			console.log(SchText)
+			document.getElementById('PayPalSchool').value = SchText;
+			console.log(document.getElementById('PayPalSchool').value)
+		}
+
+		function setYear() {
+			document.getElementById('PayPalClassAmount').value = PayPalYearText;
+		}
+
+		function setHalfYear() {
+			document.getElementById('PayPalHalfYear').value = document.getElementById('halfYearSelector').value;
+			document.getElementById('PayPalClassAmount').value = PayPalHalfYearText;
+		}
+
+		function setMonth() {
+			document.getElementById('PayPalMonth').value = document.getElementById('MonthSelector').value;
+			document.getElementById('PayPalClassAmount').value = PayPalMonthText;
 		}
 	</script>
 	<style>
@@ -73,46 +118,29 @@
 		}
 	</style>
 
-
-
-
 	<script>
-		// ask james if this breaks
-		var webUrl = window.location.href;
-		var something = "";
-		for (var i = 0; i < webUrl.length; i++) {
-			if (webUrl[i] === 'c' && webUrl[i + 1] === 'o' && webUrl[i + 2] === 'u' && webUrl[i + 3] === 'r' && webUrl[i + 4] ===
-				's' && webUrl[i + 5] === 'e' && webUrl[i + 6] === '=' && webUrl[i + 7] === 'm') {
-				something = webUrl[i] + webUrl[i + 1] + webUrl[i + 2] + webUrl[i + 3] + webUrl[i + 4] + webUrl[i + 5] + webUrl[i +
-					6] + webUrl[i + 7];
-				break;
-			} //endif
-			if (webUrl[i] === 'c' && webUrl[i + 1] === 'o' && webUrl[i + 2] === 'u' && webUrl[i + 3] === 'r' && webUrl[i + 4] ===
-				's' && webUrl[i + 5] === 'e' && webUrl[i + 6] === '=' && webUrl[i + 7] === 'h') {
-				something = webUrl[i] + webUrl[i + 1] + webUrl[i + 2] + webUrl[i + 3] + webUrl[i + 4] + webUrl[i + 5] + webUrl[i +
-					6] + webUrl[i + 7];
-				break;
-			} //endif
-			if (webUrl[i] === 'c' && webUrl[i + 1] === 'o' && webUrl[i + 2] === 'u' && webUrl[i + 3] === 'r' && webUrl[i + 4] ===
-				's' && webUrl[i + 5] === 'e' && webUrl[i + 6] === '=' && webUrl[i + 7] === 'f') {
-				something = webUrl[i] + webUrl[i + 1] + webUrl[i + 2] + webUrl[i + 3] + webUrl[i + 4] + webUrl[i + 5] + webUrl[i +
-					6] + webUrl[i + 7];
-				break;
-			} //endif
-		} //endfor
+		var splitzee = window.location.href.split("Register.html?");
+		var something = splitzee[1];
 		window.onload = function () {
-			if (something === "course=m") {
+			if (something === "course=month") {
 				document.getElementById("month").checked = true;
 				document.getElementById('months').style.display = 'block';
+				setMonth();
 			} //endif
-			else if (something === "course=f") {
-				document.getElementById("fYear").checked = true;
-			} //endif
-			else if (something === "course=h") {
+			else if (something === "course=hYear") {
 				document.getElementById("hYear").checked = true;
 				document.getElementById('half').style.display = 'block';
+				setHalfYear();
 			} //endif
-			console.log(something);
+			else {
+				// Since we are coming in at this page from nowhere 
+				// in particular, go ahead and sign them up for the 
+				// most expensive option until they change it.  ALso 
+				// makes the Paypal stuff work as there has to be a 
+				// price to send to paypal
+				document.getElementById("fYear").checked = true;
+				setYear();
+			}
 		}
 	</script>
 	<!-- //Need to tie this to the backend// -->
@@ -121,60 +149,72 @@
 		<div class="h2">
 			<h2>Register</h2>
 		</div>
-
 		<div class="form">
-			<form action="#">
-				<div class="c1">
+			<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+				<input type="hidden" name="cmd" value="_s-xclick">
+				<input type="hidden" name="hosted_button_id" value="38AGWG7PJZEDE">
+				<div>
 					Parent's First name:
 					<br>
-					<input type="text" name="pfirstname" value="">
+					<input type="hidden" name="on1" value="Parent's First name">
+					<input type="text" name="os1" value="">
 					<br>
 					<br> Parent's Last name:
 					<br>
-					<input type="text" name="plastname" value="">
+					<input type="hidden" name="on2" value="Parent's Last name">
+					<input type="text" name="os2" value="">
 					<br>
 					<br>
 				</div>
-				<div class="c2">
+				<div>
 					Child's First name:
 					<br>
-					<input type="text" name="cfirstname" value="">
+					<input type="hidden" name="on3" value="Child's First name">
+					<input type="text" name="os3" value="">
 					<br>
 					<br> Child's Last name:
 					<br>
-					<input type="text" name="clastname" value="">
+					<input type="hidden" name="on4" value="Child's Last name">
+					<input type="text" name="os4" value="">
 					<br>
 					<br>
 				</div>
-				<div class="c3">
+				<div>
 					Email:
 					<br>
-					<input type="text" name="email" value="">
+					<input type="hidden" name="on5" value="Parent's Email">
+					<input type="email" name="os5" value="">
 					<br>
-					<br> Phone Number:
+					<br> Phone Number (eg: 706-555-1234 )
 					<br>
-					<input type="tel" name="tel" value="" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+					<input type="hidden" name="on6" value="Parent's Phone Number">
+					<input type="tel" name="os6" value="" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="###-###-####" size="20" minlength="10"
+					    maxlength="12" required>
 					<br>
 					<br>
 				</div>
-				<div class="c4">
+				<div>
 					Class Length:
 					<br>
-					<div style="text-align:left;">
-						<input type="radio" id="fYear" name="course" value="fYear" onclick="show1();"> Full Year
+					<div>
+						<input type="hidden" name="on0" value="Class Length">
+						<input type="hidden" name="os0" value="" id="PayPalClassAmount" required>
+						<input type="radio" id="fYear" name="course" value="fYear" onclick="show1();"> Full Year ($400)
 						<br>
-						<input type="radio" id="hYear" name="course" value="hYear" onclick="show3();"> Half Year
+						<input type="radio" id="hYear" name="course" value="hYear" onclick="show3();"> Half Year ($200)
 						<br>
-						<div id="half" class="hide">
-							<select>
+						<div id="half" class="hide" onchange="setHalfYear()">
+							<select id="halfYearSelector">
 								<option> Fall </option>
 								<option> Spring </option>
 							</select>
+							<input type="hidden" name="on7" value="Half Year Selection">
+							<input type="text" name="os7" id="PayPalHalfYear">
 						</div>
-						<input type="radio" id="month" name="course" value="month" onclick="show2();"> Month
+						<input type="radio" id="month" name="course" value="month" onclick="show2();"> Month ($150)
 						<br>
-						<div id="months" class="hide">
-							<select>
+						<div id="months" class="hide" onchange="setMonth()">
+							<select id="MonthSelector">
 								<option> January </option>
 								<option> February </option>
 								<option> March </option>
@@ -184,6 +224,8 @@
 								<option> November </option>
 								<option> December </option>
 							</select>
+							<input type="hidden" name="on8" value="Monthly Selection">
+							<input type="hidden" name="os8" id="PayPalMonth">
 						</div>
 					</div>
 				</div>
@@ -191,20 +233,27 @@
 				<div>
 					Child's Middle School
 					<br>
-					<select id="middleSchool" onchange="other(middleSchool.value);">
-						<option value=1> Grovetown Middle School </option>
-						<option value=2> Columbia Middle School </option>
-						<option value=3> Greenbrier Middle School </option>
-						<option value=4> Riverside Middle School </option>
-						<option value=5> Evans Middle School </option>
-						<option value=6> Other </option>
+					<select id="middleSchool" onchange="other(middleSchool.value);" required>
+						<option value="" disabled selected hidden> Please Select a Middle School </option>
+						<option value="Grovetown Middle School">
+							Grovetown Middle School </option>
+						<option value="Columbia Middle School">
+							Columbia Middle School </option>
+						<option value="Greenbrier Middle School">
+							Greenbrier Middle School </option>
+						<option value="Riverside Middle School">
+							Riverside Middle School </option>
+						<option value="Evans Middle School">
+							Evans Middle School </option>
+						<option value="Other">
+							Other </option>
 					</select>
 					<br>
 					<br>
-					<div id="otherSchool" class="hide">
-						<input type="text" value="">
+					<div id="otherSchool" class="hide" onchange="SetPayPalSchoolText(PayPalSchool.value)">
+						<input type="hidden" name="on9" value="Child's School">
+						<input type="text" id="PayPalSchool" name="os9">
 					</div>
-					<br>
 				</div>
 				<input class="button1" type="submit" value="Register & Pay Now">
 				<input class="button1" type="submit" value="Register & Pay Later">

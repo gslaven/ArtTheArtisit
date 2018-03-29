@@ -7,6 +7,83 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ASAP - After-School ART Program</title>
     <link rel="stylesheet" type="text/css" href="./ArtTheArtist.css">
+    <script>
+        function show1() {
+            document.getElementById('months').style.display = 'none';
+            document.getElementById('half').style.display = 'none';
+        }
+
+        function show2() {
+            document.getElementById('months').style.display = 'block';
+            document.getElementById('half').style.display = 'none';
+        }
+
+        function show3() {
+            document.getElementById('half').style.display = 'block';
+            document.getElementById('months').style.display = 'none';
+        }
+
+        function other(middleSchool) {
+            console.log(middleSchool);
+            if (middleSchool == "Other") {
+                document.getElementById('otherSchool').style.display = 'block';
+                document.getElementById('PayPalSchool').value = document.getElementById('otherSchool').value;
+
+            } else document.getElementById('otherSchool').style.display = 'none';
+            document.getElementById('PayPalSchool').value = middleSchool;
+            console.log(document.getElementById('PayPalSchool').value);
+        }
+
+        function PayPalOther(PayPalOtherSchool) {
+            console.log(PayPalOtherSchool);
+            document.getElementById('PayPalSchool').value = document.getElementById('inputOtherSchool').value;
+        }
+    </script>
+    <style>
+        .page {
+            background-color: #1c1c1c;
+            font-family: Verdana;
+            color: white;
+            /* display: flex; */
+            justify-content: center;
+        }
+
+        .c4 {
+            width: 150px;
+            /* justify-content:center;  */
+            /* border:hotpink 1px solid;  */
+            text-align: center;
+            align-self: center;
+            margin: auto;
+        }
+
+        .form {
+            margin-top: 40px;
+            /* border: hotpink 1px solid; */
+            text-align: center;
+        }
+
+        .h2 {
+            text-align: center;
+            /* border: hotpink solid 1px; */
+            margin-top: 70px;
+        }
+
+        .button1 {
+            color: white;
+            font-family: Verdana;
+            background-color: #8a0616;
+            width: auto;
+            border-radius: 5px;
+            border-radius: 5px;
+            padding: 5px;
+            border: 2px solid whitesmoke;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
 </head>
 
 <body class="body">
@@ -25,7 +102,7 @@
                 <tr>
                     <td>
                         <select name="os0">
-                            <option value="Year long class (Sep-Dec/Jan-Apr">Year long class (Sep-Dec/Jan-Apr $400.00 USD</option>
+                            <option value="Year long class (Sep-Dec/Jan-Apr)">Year long class (Sep-Dec/Jan-Apr) $400.00 USD</option>
                             <option value="½ a year (Jan-Apr or Sep-Dec)">½ a year (Jan-Apr or Sep-Dec) $200.00 USD</option>
                             <option value="Monthly">Monthly $150.00 USD</option>
                         </select>
@@ -77,10 +154,39 @@
                 <tr>
                     <td>
                         <input type="hidden" name="on6" value="Parent's Telephone Number">Parent's Telephone Number</td>
-                </tr> -->
+                </tr>
                 <tr>
                     <td>
                         <input type="text" name="os6" maxlength="200">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="hidden" name="on7" value="Child's Middle School">Child's Middle School</td>
+                </tr>
+                <tr>
+                    <td>
+                        <select id="middleSchool" onchange="other(middleSchool.value);">
+                            <option value="Please Select a Middle School"> Please Select a Middle School </option>
+                            <option value="Grovetown Middle School"> Grovetown Middle School </option>
+                            <option value="Columbia Middle School"> Columbia Middle School </option>
+                            <option value="Greenbrier Middle School"> Greenbrier Middle School </option>
+                            <option value="Riverside Middle School"> Riverside Middle School </option>
+                            <option value="Evans Middle School"> Evans Middle School </option>
+                            <option value="Other"> Other </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="otherSchool" class="hide" onchange="PayPalOther(inputOtherSchool.value);">
+                            <input id="inputOtherSchool" type="text" value="">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" name="os7" value="" id="PayPalSchool">
                     </td>
                 </tr>
             </table>
