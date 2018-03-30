@@ -1,0 +1,43 @@
+.page {
+    background-color: #1c1c1c;
+    font-family: Verdana;
+    color: white;
+    /* display: flex; */
+    justify-content: center;
+}
+
+.c4 {
+    width: 150px;
+    /* justify-content:center;  */
+    /* border:hotpink 1px solid;  */
+    text-align: center;
+    align-self: center;
+    margin: auto;
+}
+
+.form {
+    margin-top: 40px;
+    /* border: hotpink 1px solid; */
+    text-align: center;
+}
+
+.h2 {
+    text-align: center;
+    /* border: hotpink solid 1px; */
+    margin-top: 70px;
+}
+
+.button1 {
+    color: white;
+    font-family: Verdana;
+    background-color: #8a0616;
+    width: auto;
+    border-radius: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    border: 2px solid whitesmoke;
+}
+
+.hide {
+    display: none;
+}

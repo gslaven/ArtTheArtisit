@@ -2,147 +2,9 @@
 <html>
 
 <head>
-
+	<script src="Register.js"></script>
+	<link rel="stylesheet" href="Register.css">
 	<title>ASAP-Register</title>
-	<script>
-		//This below must match EXACTLY to Paypal's selection text
-		var PayPalYearText = "Year";
-		var PayPalHalfYearText = "Half Year";
-		var PayPalMonthText = "Month";
-
-		function show1() {
-			document.getElementById('months').style.display = 'none';
-			document.getElementById('half').style.display = 'none';
-			// This corresponds to the $400 class
-			//This below must match EXACTLY to Paypal's selection text
-			document.getElementById('PayPalClassAmount').value =
-				PayPalYearText;
-
-		}
-
-		function show2() {
-			document.getElementById('months').style.display = 'block';
-			document.getElementById('half').style.display = 'none';
-			// This corresponds to the $150 class
-			//This below must match EXACTLY to Paypal's selection text
-			document.getElementById('PayPalClassAmount').value =
-				PayPalMonthText;
-			// set the month paypal text box
-			setMonth();
-		}
-
-		function show3() {
-			document.getElementById('half').style.display = 'block';
-			document.getElementById('months').style.display = 'none';
-			// This corresponds to the $200 class
-			//This below must match EXACTLY to Paypal's selection text
-			document.getElementById('PayPalClassAmount').value = PayPalHalfYearText;
-			// set the half year paypal text box
-			setHalfYear();
-		}
-
-		function other(middleSchool) {
-			if (middleSchool == "Other") {
-				document.getElementById('otherSchool').style.display = 'block';
-				SetPayPalSchoolText("");
-			} else {
-				document.getElementById('otherSchool').style.display = 'none';
-				SetPayPalSchoolText(middleSchool);
-			}
-		}
-
-		function SetPayPalSchoolText(SchText) {
-			console.log("In SetPayPalSchoolText")
-			console.log(SchText)
-			document.getElementById('PayPalSchool').value = SchText;
-			console.log(document.getElementById('PayPalSchool').value)
-		}
-
-		function setYear() {
-			document.getElementById('PayPalClassAmount').value = PayPalYearText;
-		}
-
-		function setHalfYear() {
-			document.getElementById('PayPalHalfYear').value = document.getElementById('halfYearSelector').value;
-			document.getElementById('PayPalClassAmount').value = PayPalHalfYearText;
-		}
-
-		function setMonth() {
-			document.getElementById('PayPalMonth').value = document.getElementById('MonthSelector').value;
-			document.getElementById('PayPalClassAmount').value = PayPalMonthText;
-		}
-	</script>
-	<style>
-		.page {
-			background-color: #1c1c1c;
-			font-family: Verdana;
-			color: white;
-			/* display: flex; */
-			justify-content: center;
-		}
-
-		.c4 {
-			width: 150px;
-			/* justify-content:center;  */
-			/* border:hotpink 1px solid;  */
-			text-align: center;
-			align-self: center;
-			margin: auto;
-		}
-
-		.form {
-			margin-top: 40px;
-			/* border: hotpink 1px solid; */
-			text-align: center;
-		}
-
-		.h2 {
-			text-align: center;
-			/* border: hotpink solid 1px; */
-			margin-top: 70px;
-		}
-
-		.button1 {
-			color: white;
-			font-family: Verdana;
-			background-color: #8a0616;
-			width: auto;
-			border-radius: 5px;
-			border-radius: 5px;
-			padding: 5px;
-			border: 2px solid whitesmoke;
-		}
-
-		.hide {
-			display: none;
-		}
-	</style>
-
-	<script>
-		var splitzee = window.location.href.split("Register.html?");
-		var something = splitzee[1];
-		window.onload = function () {
-			if (something === "course=month") {
-				document.getElementById("month").checked = true;
-				document.getElementById('months').style.display = 'block';
-				setMonth();
-			} //endif
-			else if (something === "course=hYear") {
-				document.getElementById("hYear").checked = true;
-				document.getElementById('half').style.display = 'block';
-				setHalfYear();
-			} //endif
-			else {
-				// Since we are coming in at this page from nowhere 
-				// in particular, go ahead and sign them up for the 
-				// most expensive option until they change it.  ALso 
-				// makes the Paypal stuff work as there has to be a 
-				// price to send to paypal
-				document.getElementById("fYear").checked = true;
-				setYear();
-			}
-		}
-	</script>
 	<!-- //Need to tie this to the backend// -->
 
 	<body class="page">
@@ -183,9 +45,10 @@
 					Email:
 					<br>
 					<input type="hidden" name="on5" value="Parent's Email">
-					<input type="email" name="os5" value="">
+					<input id="email" type="email" name="os5" value="">
 					<br>
-					<br> Phone Number (eg: 706-555-1234 )
+					<br> Phone Number
+					<br> (eg: 706-555-1234 )
 					<br>
 					<input type="hidden" name="on6" value="Parent's Phone Number">
 					<input type="tel" name="os6" value="" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="###-###-####" size="20" minlength="10"
@@ -256,7 +119,7 @@
 					</div>
 				</div>
 				<input class="button1" type="submit" value="Register & Pay Now">
-				<input class="button1" type="submit" value="Register & Pay Later">
+				<input class="button1" type="submit" id="Register" onclick="sendMail(); return false" value="Register & Pay Later">
 			</form>
 		</div>
 
