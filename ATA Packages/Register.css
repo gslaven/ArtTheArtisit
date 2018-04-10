@@ -1,33 +1,65 @@
-.page {
-    background-color: #1c1c1c;
-    font-family: Verdana;
+.page 
+{
+    font-family: Abel, sans-serif;
     color: white;
-    /* display: flex; */
-    justify-content: center;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 
-.c4 {
-    width: 150px;
-    /* justify-content:center;  */
-    /* border:hotpink 1px solid;  */
+
+}
+.page::after
+{
+    content: "";
+    background: url("../images/background.jpg");
+    background-position: center top;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+}
+.area
+{
+   background: #1c1c1c;
+   width:60%;
+   margin-top: -1.2em;
+   height: 59.3em;
+   z-index: 1;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   /* border: hotpink 2px solid; */
+
+}
+.logo
+{
+    display:flex;
+    /* justify-content: center; */
+    width: 350px;
+    height: 200px;
+    background: #1c1c1c;
+       /* border: hotpink 2px solid; */
+}
+.form 
+{
+    margin-top: 10px;
     text-align: center;
-    align-self: center;
-    margin: auto;
+       /* border: hotpink 2px solid; */
 }
 
-.form {
-    margin-top: 40px;
-    /* border: hotpink 1px solid; */
+.h2 
+{
     text-align: center;
+    margin-top: 10px;
 }
 
-.h2 {
-    text-align: center;
-    /* border: hotpink solid 1px; */
-    margin-top: 70px;
-}
-
-.button1 {
+.button1 
+{
     color: white;
     font-family: Verdana;
     background-color: #8a0616;
@@ -37,7 +69,17 @@
     padding: 5px;
     border: 2px solid whitesmoke;
 }
+.button2 
+{
+    color: whitesmoke;
+    background-color: #6da331;
+    width: auto;
+    border-radius: 5px;
+    padding: 5px;
+    border: 2px solid whitesmoke;
+}
 
-.hide {
+.hide 
+{
     display: none;
 }
