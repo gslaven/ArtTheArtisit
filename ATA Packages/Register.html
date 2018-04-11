@@ -5,10 +5,15 @@
 	<script src="Register.js"></script>
 	<script src="RegisterEmailPlusNodemailer.js"></script>
 	<link rel="stylesheet" href="Register.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel">
 	<title>ASAP-Register</title>
 	<!-- //Need to tie this to the backend// -->
-
+</head>
 	<body class="page">
+	<div class="area">
+		<div class="headerLogo">
+			<img class="logo" src="../images/asapLogoWhite.png" alt="logo" id="home"/>
+		</div>
 		<div class="h2">
 			<h2>Register</h2>
 		</div>
@@ -118,13 +123,17 @@
 						<input type="hidden" name="on9" value="Child's School">
 						<input type="text" id="PayPalSchool" name="os9">
 					</div>
+					<br>
+				
 				</div>
-				<input 
-				formaction="https://www.sandbox.paypal.com/cgi-bin/webscr" class="button1" type="submit" value="Register & Pay Now">
-				<input class="button1" type="submit" id="Register" onclick="sendRegistrationEMail(); return false" value="Register & Pay Later">
+				<input id="PayPalRegister"
+				formaction="https://www.sandbox.paypal.com/cgi-bin/webscr" class="button2" type="submit" value="Register & Pay Now">
+				<input class="button1" type="button" id="EmailRegister" onclick="sendRegistrationEMail(); return false" value="Register & Pay Later">
+				<br>
+				<br>
 			</form>
 		</div>
-
+	</div>
 	</body>
 
 </html>

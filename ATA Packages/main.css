@@ -13,7 +13,7 @@ body
 {
     background-color: #1c1c1c;
     font-family: Abel, sans-serif;
-    border: white 3px dotted;
+    /* border: white 3px dotted; */
 }
 /* Hides the mobile nav on desktop */
 .topnav 
@@ -21,95 +21,59 @@ body
     display: none;
 }
 #mySidenav a
-{
-    position: absolute;
-    left: -10px;
-    transition: 0.3s;
-    padding: 15px;
-    width: 100px;
-    text-decoration: none;
-    font-size: 20px;
-    color: whitesmoke;
-    border-radius: 0 5px 5px 0;
-    text-align: center;
-    margin-top: 40px;
-    scroll-behavior: auto;
-    z-index: 1;
-}
-/* Brings the side nav out when hovered on */
-#mySidenav a:hover 
-{
-    left: 0;
-}
-/*side nav styling*/
- #aboutMe 
-{
-    top: 200px;
-    background-color:#256697;
-}
-#whyArt 
-{
-    top: 280px;
-    background-color:  #8a0616;
-}
-#learnArt 
-{
-    top: 360px;
-    background-color:#f8b700;
-}
-#teachArt 
-{
-    top: 440px;
-    background-color: #6da331;
-}
-#packages 
-{
-    top: 520px;
-    background-color: #ff5216;
-}
-#testimonials 
-{
-    top: 600px;
-    background-color: #460061;
-}
+    {
+        position: absolute;
+        left: -10px;
+        transition: 0.3s;
+        padding: 15px;
+        width: 100px;
+        text-decoration: none;
+        font-size: 20px;
+        color: whitesmoke;
+        border-radius: 0 5px 5px 0;
+        text-align: center;
+        margin-top: 40px;
+        scroll-behavior: auto;
+        z-index: 1;
+    }
+    /* Brings the side nav out when hovered on */
+    #mySidenav a:hover 
+    {
+        left: 0;
+    }
+    /*side nav styling*/
+    #aboutMe 
+    {
+        top: 200px;
+        background-color:#256697;
+    }
+    #whyArt 
+    {
+        top: 280px;
+        background-color:  #8a0616;
+    }
+    #learnArt 
+    {
+        top: 360px;
+        background-color:#f8b700;
+    }
+    #teachArt 
+    {
+        top: 440px;
+        background-color: #6da331;
+    }
+    #packages 
+    {
+        top: 520px;
+        background-color: #ff5216;
+    }
+    #testimonials 
+    {
+        top: 600px;
+        background-color: #460061;
+    }
 
 /* Alternating content sections */
-.oddsection 
-{
-    background-color: #1c1c1c;
-    display: flex;
-    flex-direction: column;
-    color: whitesmoke;
-    min-height: 450px;
-    padding: 10px;
-    margin-left: 150px;
-    margin-top:25px;
-    margin-right:10px;
-    width:auto;
-    border: yellow 2px solid;
-}  
-.evensection 
-{
-    background-color: #1c1c1c;
-    display: flex;
-    flex-direction: column;
-    color:whitesmoke;
-    min-height: 500px;
-    padding: 10px;
-    margin-left: 150px;
-    margin-top: 25px;
-    margin-right:10px;
-    width:auto;
-    overflow: hidden;
-    border: green 2px solid;
-}
-/* Content for the sections allows different flex alignment within each section after the title */
-.stuff
-{
-    display:flex; 
-    flex-flow: column wrap; 
-    justify-content: center;   
-}
 /* Desktop version of the slider */
 .slideshow-container 
     {
@@ -140,13 +104,14 @@ body
         max-width:300px;
         flex-wrap: nowrap;
     }
-    /* Fades slides in slider, needs to be adjusted */
+    /* Fades slides in slider*/
     .fade 
     {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
+        animation:fading 2s }@keyframes fading{0%{opacity:0}100%{opacity:1}
+        /* -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s; */
     }
     /* Hides mobile version on desktop */
     .mobileSlide
@@ -177,26 +142,71 @@ body
         cursor: pointer;
         padding:4px;
     }
+
+
+.oddsection 
+{
+    background-color: #1c1c1c;
+    display: flex;
+    flex-direction: column;
+    color: whitesmoke;
+    min-height: 350px;
+    padding: 10px;
+    margin-left: 150px;
+    margin-top:25px;
+    margin-right:10px;
+    width:auto;
+    /* border: yellow 2px solid; */
+}  
+.evensection 
+{
+    background-color: #1c1c1c;
+    display: flex;
+    flex-direction: column;
+    color:whitesmoke;
+    min-height: 350px;
+    padding: 10px;
+    margin-left: 150px;
+    margin-top: 25px;
+    margin-right:10px;
+    width:auto;
+    overflow: hidden;
+    /* border: green 2px solid; */
+}
+h3
+{
+    padding-left: 25px;
+}
+/* Content for the sections allows different flex alignment within each section after the title */
+.stuff
+{
+    display:flex; 
+    flex-flow: row wrap; 
+    justify-content: center; 
+    align-items: center;
+    /* border:hotpink 2px solid; */
+}
+
     
 /* Images that float right */
 .rimage 
 {
     height: 250px;
     width: 250px;
-    align-self: flex-end;
-    border: green 2px solid;
+    margin: 10px;
+    order: 2;
 }
 /* Images that float left */
 .limage 
 {
     height: 250px;
     width: 250px;
-    align-self: flex-start;
+    margin: 10px;
 }
 /* Text  */
 .text
 {
-width: 40%;
+    width:40%;
 }
 /* Boxes within the packages section of the site */
 .package
