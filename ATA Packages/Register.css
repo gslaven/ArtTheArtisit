@@ -11,7 +11,7 @@
 
 .page::after {
     content: "";
-    background-image: url("../images/background.jpg");
+    background-image: url("images/background.jpg");
     background-repeat: repeat-y;
     background-position: center center;
     opacity: 0.5;
