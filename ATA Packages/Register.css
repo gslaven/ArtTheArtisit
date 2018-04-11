@@ -1,5 +1,4 @@
-.page 
-{
+.page {
     font-family: Abel, sans-serif;
     color: white;
     display: flex;
@@ -7,60 +6,55 @@
     align-items: center;
     width: 100%;
     height: 100%;
-       border: hotpink 2px solid;
-
-
+    /* border: hotpink 2px solid; */
 }
-.page::after
-{
+
+.page::after {
     content: "";
     background-image: url("../images/background.jpg");
-    background-repeat: repeat-y  ;
+    background-repeat: repeat-y;
     background-position: center center;
     opacity: 0.5;
     height: 105vh;
     width: 100%;
     position: absolute;
-    z-index: -1;   
+    z-index: -1;
     align-items: center;
-    border: hotpink 2px solid;
+    /* border: hotpink 2px solid; */
 }
-.area
-{
-   background: #1c1c1c;
-   width:60%;
-   /* margin-top: -1.2em; */
-   height: 105vh;
-   z-index: 1;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   /* border: hotpink 2px solid; */
 
+.area {
+    background: #1c1c1c;
+    width: 60%;
+    /* margin-top: -1.2em; */
+    height: 105vh;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: hotpink 2px solid; */
 }
-.logo
-{
+
+.logo {
     margin-top: 35px;
     width: 350px;
     height: 200px;
     background: #1c1c1c;
-       /* border: hotpink 2px solid; */
-}
-.form 
-{
-    margin-top: 10px;
-    text-align: center;
-       /* border: hotpink 2px solid; */
+    /* border: hotpink 2px solid; */
 }
 
-.h2 
-{
+.form {
+    margin-top: 10px;
+    text-align: center;
+    /* border: hotpink 2px solid; */
+}
+
+.h2 {
     text-align: center;
     margin-top: 10px;
 }
 
-.button1 
-{
+.button1 {
     color: white;
     font-family: Verdana;
     background-color: #8a0616;
@@ -70,8 +64,8 @@
     padding: 5px;
     border: 2px solid whitesmoke;
 }
-.button2 
-{
+
+.button2 {
     color: whitesmoke;
     background-color: #6da331;
     width: auto;
@@ -80,7 +74,6 @@
     border: 2px solid whitesmoke;
 }
 
-.hide 
-{
+.hide {
     display: none;
 }

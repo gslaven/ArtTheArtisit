@@ -1,7 +1,9 @@
 `use strict`;
+console.log("In RegisterEmail");
 const nodemailer = require('nodemailer');
+
 function sendRegistrationEMail() {
-    console.log("In sendMail")
+    console.log("In sendMail");
     var transporter = nodemailer.createTransport({
         service: 'yahoo',
         auth: {
