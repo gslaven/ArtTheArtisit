@@ -11,59 +11,67 @@
 	<!-- //Need to tie this to the backend// -->
 </head>
 	<body class="page">
-	<div class="area">
-		<div class="headerLogo">
+	<di v class="area">
+		<div class="logoHeader">
+			<a href="ASAPhome.html">
 			<img class="logo" src="images/asapLogoWhite.png" alt="logo" id="home"/>
+			</a>
 		</div>
 		<div class="h2">
 			<h2>Register</h2>
 		</div>
-		<div class="form">
+		<div>
 			<form method="post" target="_top">
-				<input type="hidden" name="cmd" value="_s-xclick">
-				<input type="hidden" name="hosted_button_id" value="38AGWG7PJZEDE">
-				<div>
+				<div class="parentf">
+					<input type="hidden" name="cmd" value="_s-xclick">
+					<input type="hidden" name="hosted_button_id" value="38AGWG7PJZEDE">
+					<br>
 					Parent's First name:
 					<br>
 					<input type="hidden" name="on1" value="Parent's First name">
 					<input type="text" name="os1" value="">
-					<br>
-					<br> Parent's Last name:
+				</div>
+				<div class="parentl">
+					<br> 
+					Parent's Last name:
 					<br>
 					<input type="hidden" name="on2" value="Parent's Last name">
 					<input type="text" name="os2" value="">
-					<br>
-					<br>
 				</div>
-				<div>
+				<div class="childf" id="child">
+					<br>
 					Child's First name:
 					<br>
 					<input type="hidden" name="on3" value="Child's First name">
 					<input type="text" name="os3" value="">
 					<br>
-					<br> Child's Last name:
+				</div>
+				<div class="childl">
+					<br> 
+					Child's Last name:
 					<br>
 					<input type="hidden" name="on4" value="Child's Last name">
 					<input type="text" name="os4" value="">
 					<br>
-					<br>
 				</div>
-				<div>
+				<div class="email">
+					<br>
 					Email:
 					<br>
 					<input type="hidden" name="on5" value="Parent's Email">
 					<input id="email" type="email" name="os5" value="">
-					<br>
-					<br> Phone Number
+				</div>	
+				<div class="phone">
+					Phone Number:
 					<br> (eg: 706-555-1234 )
 					<br>
 					<input type="hidden" name="on6" value="Parent's Phone Number">
 					<input type="tel" name="os6" value="" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="###-###-####" size="20" minlength="10"
 					    maxlength="12" required>
 					<br>
-					<br>
 				</div>
-				<div>
+				<div class="length">
+					<br>
 					Class Length:
 					<br>
 					<div>
@@ -99,9 +107,9 @@
 						</div>
 					</div>
 				</div>
-				<br>
-				<div>
-					Child's Middle School
+				<div class="school">
+					<br>
+					Child's Middle School:
 					<br>
 					<select id="middleSchool" onchange="other(middleSchool.value);" required>
 						<option value="" disabled selected hidden> Please Select a Middle School </option>
@@ -124,14 +132,16 @@
 						<input type="hidden" name="on9" value="Child's School">
 						<input type="text" id="PayPalSchool" name="os9">
 					</div>
-					<br>
 				
 				</div>
+				<div class="buttons">
 				<input id="PayPalRegister"
 				formaction="https://www.sandbox.paypal.com/cgi-bin/webscr" class="button2" type="submit" value="Register & Pay Now">
 				<input class="button1" type="button" id="EmailRegister" onclick="sendRegistrationEMail(); return false" value="Register & Pay Later">
 				<br>
 				<br>
+				<a href="ASAPhome.html" class="button3">Return to ASAP</a>
+				</div>
 			</form>
 		</div>
 	</div>

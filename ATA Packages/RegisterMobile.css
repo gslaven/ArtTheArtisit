@@ -1,16 +1,52 @@
-@media screen and (max-width: 630px) {
-    .area 
-    {
+@media screen and (max-width: 630px) 
+{
+    .page 
+{
+    font-family: Abel, sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    /* border: hotpink 2px solid; */
+}
+    .area {
+        background: #1c1c1c;
+        width: 60%;
         min-width: 250px;
+        height: 105vh;
+        z-index: 1;
+        /* display: flex;
+        flex-direction: column;
+        align-items: center; */
         /* border: hotpink 2px solid; */
     }
-
+    form 
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
     .logo 
     {
         margin-top: 25px;
         width: 245px;
         height: 140px;
-    
     }
+    
+    .form {
+        margin-top: 15px;
+        text-align: center;
+        /* border: hotpink 2px solid; */
+    }
+
+    .phone
+{
+    margin-top:20px;
+    /* border: blueviolet 2px solid; */
+
+}
 
 }
