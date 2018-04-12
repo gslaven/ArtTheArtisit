@@ -1,0 +1,16 @@
+@media screen and (max-width: 630px) {
+    .area 
+    {
+        min-width: 250px;
+        /* border: hotpink 2px solid; */
+    }
+
+    .logo 
+    {
+        margin-top: 25px;
+        width: 245px;
+        height: 140px;
+    
+    }
+
+}

@@ -25,7 +25,7 @@
     position: fixed;
     z-index: 100;
     background: #1c1c1c;
-    border: hotpink 2px solid;
+    /* border: hotpink 2px solid; */
     left: 0;
     top: 0;
     width: 100%;
@@ -73,23 +73,13 @@
   .evensection 
   {
     width:auto;
-    margin-left: 0;
-  }
-  .evensection span
-  {
-    display: block; 
-      content: " "; 
-      height: 400px;      /* Give height of your fixed element */
-          margin-top: -400px; /* Give negative margin of your fixed element */    
-          visibility: hidden; 
-          pointer-events: none;
-          border: hotpink 2px solid;
+    margin:15px;
   }
 
   .oddsection 
   {
     width:auto;
-    margin-left: 0;
+    margin:15px;
   } 
 
   /* This accounts for the logo and nav at the top when using anchor links */
@@ -97,8 +87,8 @@
   {
     display: block; 
     content: " "; 
-    height: 200px;      
-    margin-top: -200px;   
+    height: 250px;      
+    margin-top: -250px;   
     visibility: hidden; 
     pointer-events: none;
   }
@@ -126,7 +116,7 @@
     max-width: 300px;
     max-height: 300px;
   }
-
+ 
 
 }
 
@@ -138,7 +128,7 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    border: hotpink 2px solid;
+    /* border: hotpink 2px solid; */
   }
 
   .logo
@@ -151,6 +141,11 @@
  
   }
 
+  .mobileSlide
+  {
+    margin-top: 140px;
+    display:flex;
+  }
   .topnav a:not(:nth-child(n+7)) {display: none;}
 
   .topnav a.icon 
@@ -195,7 +190,16 @@
   /* .topnav .icon {
     display: none;
   } */
-
+  /* this adjusts the width of text on mobile to fill the screen */
+  .text
+  {
+      width:100%;
+  }
+  /* this alternates image and text in the wrap */
+  .rimage 
+  {
+    order: -1;
+  }
 }    
 
 @media only screen and (max-width: 300px) 
@@ -204,10 +208,14 @@
   {
     height: 50px;
   }
+
+  .mobileSlide
+  {
+    margin-top: 75px;
+  }
   .text 
   {
-      font-size: 11px;
-      padding: 50%;
+    margin: 20px;
   }
   .evensection
   {
@@ -227,6 +235,19 @@
   {
       display:flex;
       margin-left: 0;
+  }
+  .rimage 
+  {
+    height: 175px;
+    width: 175px;
+    margin: 5px;
+  }
+  /* Images that float left */
+  .limage 
+  {
+      height: 175px;
+      width: 175px;
+      margin: 5px;
   }
 }
   

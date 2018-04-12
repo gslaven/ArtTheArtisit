@@ -11,7 +11,7 @@
 
 .page::after {
     content: "";
-    background-image: url("../images/background.jpg");
+    background-image: url("images/background.jpg");
     background-repeat: repeat-y;
     background-position: center center;
     opacity: 0.5;
@@ -55,6 +55,7 @@
 }
 
 .button1 {
+    margin: 7px;
     color: white;
     font-family: Verdana;
     background-color: #8a0616;
@@ -66,6 +67,7 @@
 }
 
 .button2 {
+    margin: 7px;
     color: whitesmoke;
     background-color: #6da331;
     width: auto;
