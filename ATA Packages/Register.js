@@ -34,7 +34,6 @@ function show1() {
     //This below must match EXACTLY to Paypal's selection text
     document.getElementById('PayPalClassAmount').value =
         PayPalYearText;
-
 }
 
 function show2() {
