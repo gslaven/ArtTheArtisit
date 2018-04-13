@@ -34,11 +34,14 @@
     flex-direction: column; */
 }
 
+/* header, only contains the logo */
 .logoHeader
 {
     /* border: #6da331 2px solid; */
     text-align: center;
 }
+
+/* formats the image */
 .logo
 {
     width: 350px;
@@ -46,11 +49,14 @@
     background: #1c1c1c;
     /* border: hotpink 2px solid;  */
 }
-.h2 {
+/* formats the word register */
+.h2 
+{
     text-justify:auto;
     text-align: center;
     /* border: aqua 1px solid; */
 }
+/* sets up grid layout for the entire form, this changes to flexbox on mobile */
 form 
 {
     display: grid;
@@ -59,6 +65,7 @@ form
     text-align: center;
     /* border: hotpink 2px solid; */
 }
+/* all of these assign locations of the items in the grid for the form */
 .parentf
 {  
    
@@ -76,28 +83,27 @@ form
 .childf
 {
   
-   grid-row: 2/3;
+   grid-row: 3/4;
    grid-column:2/3;
    /* border: blueviolet 2px solid; */
 }
 .childl
 {
   
-   grid-row: 2/3;
+   grid-row: 3/4;
    grid-column:3/4;
    /* border: blueviolet 2px solid; */
 }
-
 .email
 {
-    grid-row: 3/4;
+    grid-row: 2/3;
     grid-column:2/3;
     /* border: blueviolet 2px solid; */
 
 }
 .phone
 {
-    grid-row: 3/4;
+    grid-row: 2/3;
     grid-column:3/4;
     /* border: blueviolet 2px solid; */
 
@@ -127,7 +133,8 @@ form
 
 
 /* buttons flow down to mobile */
-.button1 {
+.button1 
+{
     margin: 7px;
     color: white;
     font-family: Verdana;
@@ -139,7 +146,8 @@ form
     border: 2px solid whitesmoke;
 }
 
-.button2 {
+.button2 
+{
     margin: 7px;
     color: whitesmoke;
     background-color: #6da331;
