@@ -16,10 +16,26 @@ body
     /* border: white 3px dotted; */
 }
 /* Hides the mobile nav on desktop */
-.topnav 
-{
-    display: none;
+ul.nav {
+	margin:0 auto;
+	padding:0;
+	list-style:none;
+	text-align:center;
+	border-bottom:1px solid #ccc;
+	width:100%;
 }
+ul.nav li a, ul.nav li a:visited {
+	text-decoration:none;
+}
+.nav li { display:block; }
+.nav a {
+	display:none;
+	padding:10px 25px 25px;
+	border-bottom:1px solid #ccc;
+	margin-bottom:-1px;
+	text-align:center;
+}
+.nav a:hover { border-bottom:1px solid #0cf; }
 #mySidenav a
     {
         position: absolute;

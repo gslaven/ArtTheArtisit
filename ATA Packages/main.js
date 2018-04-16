@@ -1,15 +1,9 @@
 /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-
- function mobileDropdown() {
-    console.log("main my function")
-     var x = document.getElementById("myTopnav");
-     console.log(x.className);
-     if (x.className === "topnav") {
-         x.className += " responsive";
-     } else {
-         x.className = "topnav";
-    } 
-}
+// $('nav a#toggle').click(function() {
+//     $('ul').slideToggle(200, function() {
+//       // Animation complete.
+//     });
+//   });
 
 // function mobileDropdown() {
 //     console.log('inside myFunction');
