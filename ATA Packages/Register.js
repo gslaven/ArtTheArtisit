@@ -68,7 +68,6 @@ function other(middleSchool) {
 }
 
 function SetPayPalSchoolText(SchText) {
-    console.log(SchText)
     document.getElementById('PayPalSchool').value = SchText;
 }
 
@@ -84,4 +83,20 @@ function setHalfYear() {
 function setMonth() {
     document.getElementById('PayPalMonth').value = document.getElementById('MonthSelector').value;
     document.getElementById('PayPalClassAmount').value = PayPalMonthText;
+}
+
+function SetFormSpreeReplyTo() {
+    console.log("in SetFormSpreeReplyTo")
+    var varEmail = document.getElementById('email').value;
+    console.log("Email: " + varEmail);
+    document.getElementById('formSpreeReplyTo').value = varEmail;
+    console.log("Element value: " + document.getElementById('formSpreeReplyTo').value);
+    SetFormSpreeCC(varEmail);
+}
+
+function SetFormSpreeCC(paraEmail) {
+    console.log("in SetFormSpreeCC")
+    console.log("Email: " + paraEmail);
+    document.getElementById('formSpreeCC').value = paraEmail;
+    console.log("Element value: " + document.getElementById('formSpreeCC').value);
 }

@@ -47,11 +47,11 @@
 						<br> Email:
 						<br>
 						<input type="hidden" name="on5" value="Parent's Email">
-						<input id="email" type="email" name="os5" value="">
+						<input id="email" type="email" name="os5" value="" onchange="SetFormSpreeReplyTo()">
 					</div>
 					<div class="phone">
 						Phone Number:
-						<br> (eg: 706-555-1234 )
+						<br> ( eg: 706-555-1234 )
 						<br>
 						<input type="hidden" name="on6" value="Parent's Phone Number">
 						<input type="tel" name="os6" value="" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="###-###-####" size="20" minlength="10"
@@ -72,7 +72,6 @@
 					<input type="text" name="os4" value="">
 					<br>
 				</div>
-				
 				<div class="length">
 					<br> Class Length:
 					<br>
@@ -138,6 +137,12 @@
 				<div class="buttons">
 					<input id="PayPalRegister" formaction="https://www.sandbox.paypal.com/cgi-bin/webscr" class="button2" type="submit" value="Register & Pay Now">
 					<input class="button1" type="submit" id="EmailRegister" formaction="https://formspree.io/GasTest@yahoo.com" value="Register & Pay Later">
+					<!-- GAS - 2018-04-13 - Yep, Friday the 13th
+							FormSpree hidden fields to allow for 
+							custom email messages from the ASAP form  -->
+					<input type="hidden" name="_replyto" placeholder="To be set by JavaScript" id="formSpreeReplyTo">
+					<input type="hidden" name="_subject" value="New ASAP Registration Request!">
+					<input type="hidden" name="_cc" value="To be set by JavaScript" id="formSpreeCC">
 					<br>
 					<br>
 					<a href="ASAPhome.html" class="button3">Return to ASAP</a>
