@@ -1,5 +1,4 @@
 /*ASAP logo*/
-
 .logo {
     display: flex;
     justify-content: flex-start;
@@ -10,45 +9,17 @@
 }
 
 /* General style for the page */
-
 body {
     background-color: #1c1c1c;
     font-family: Abel, sans-serif;
-    /* border: white 3px dotted; */
 }
 
 /* Hides the mobile nav on desktop */
-
-ul.nav {
-    margin: 0 auto;
-    padding: 0;
-    list-style: none;
-    text-align: center;
-    border-bottom: 1px solid #ccc;
-    width: 100%;
-}
-
-ul.nav li a,
-ul.nav li a:visited {
-    text-decoration: none;
-}
-
-.nav li {
-    display: block;
-}
-
 .nav a {
     display: none;
-    padding: 10px 25px 25px;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: -1px;
-    text-align: center;
 }
 
-.nav a:hover {
-    border-bottom: 1px solid #0cf;
-}
-
+/* format for the side nav, desktop/tablet only */
 #mySidenav a {
     position: absolute;
     left: -10px;
@@ -66,13 +37,11 @@ ul.nav li a:visited {
 }
 
 /* Brings the side nav out when hovered on */
-
 #mySidenav a:hover {
     left: 0;
 }
 
-/*side nav styling*/
-
+/*side nav  section styling*/
 #aboutMe {
     top: 200px;
     background-color: #256697;
@@ -103,22 +72,32 @@ ul.nav li a:visited {
     background-color: #460061;
 }
 
-/* Alternating content sections */
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+}
 
-/* Desktop version of the slider */
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0)  */
+.sticky+.myContent {
+    padding-top: 50px;
+}
 
+/* Desktop version of the slider, positions it to the right */
 .slideshow-location {
     display: flex;
     justify-content: flex-end;
+    /* border: hotpink 2px solid; */
 }
 
-.slideshow-container {
-    height: auto;
-    position: relative;
+/* desktop version of the slideshow */
+.desktopslideshow-container {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
+    height: auto;
+    position: relative;
     overflow: hidden;
     z-index: 1;
     width: 80%;
@@ -126,34 +105,30 @@ ul.nav li a:visited {
 }
 
 /* Sets of 3 images */
-
 .mySlides {
-    z-index: -1;
-    flex-wrap: nowrap;
-    max-height: 300px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    flex-wrap: nowrap;
+    z-index: -1;
+    max-height: 300px;
     /* border: hotpink 2px solid; */
 }
 
 /* Images in the slideshow */
-
 .images {
+    flex-wrap: nowrap;
     align-self: center;
     width: 32.9%;
     height: 300px;
     max-width: 300px;
-    flex-wrap: nowrap;
     /* border: greenyellow 2px solid; */
 }
 
 /* Fades slides in slider*/
-
 .fade {
     animation: fading 2s
 }
-
 @keyframes fading {
     0% {
         opacity: 0
@@ -161,28 +136,9 @@ ul.nav li a:visited {
     100% {
         opacity: 1
     }
-    /* -webkit-animation-name: fade;
-        -webkit-animation-duration: 1.5s;
-        animation-name: fade;
-        animation-duration: 1.5s; */
-}
-
-/* Hides mobile version on desktop */
-
-.mobileSlide {
-    display: none;
-}
-
-/* Mobile version of the slider, only 1 image */
-
-.mySlidesMobile {
-    justify-content: center;
-    z-index: -1;
-    max-height: 300px;
 }
 
 /* Next & previous buttons */
-
 .leftChevron {
     font-size: 2em;
     color: white;
@@ -190,7 +146,6 @@ ul.nav li a:visited {
     cursor: pointer;
     padding: 4px;
 }
-
 .rightChevron {
     font-size: 2em;
     color: white;
@@ -199,51 +154,62 @@ ul.nav li a:visited {
     padding: 4px;
 }
 
+/* Hides mobile version on desktop */
+.mobileslideshow-container  {
+    display: none;
+}
+
+/* Alternating content sections */
 .oddsection {
-    background-color: #1c1c1c;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    background-color: #1c1c1c;
     color: whitesmoke;
     min-height: 350px;
-    padding: 10px;
+    width: auto;
     margin-left: 150px;
     margin-top: 25px;
     margin-right: 10px;
-    width: auto;
+    padding: 10px;
     /* border: yellow 2px solid; */
 }
 
 .evensection {
-    background-color: #424141;
     display: flex;
     flex-direction: column;
+    background-color: #424141;
     color: whitesmoke;
     min-height: 350px;
-    padding: 10px;
+    width: auto;
     margin-left: 150px;
     margin-top: 25px;
     margin-right: 10px;
-    width: auto;
+    padding: 10px;
     overflow: hidden;
     /* border: green 2px solid; */
 }
 
+/* section headers */
 h3 {
-    padding-left: 25px;
+    padding-left: 15px;
 }
 
 /* Content for the sections allows different flex alignment within each section after the title */
-
 .stuff {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     /* border:hotpink 2px solid; */
 }
 
-/* Images that float right */
+/* Text  */
+.text {
+    width: 50%;
+}
 
+/* Images that align right */
 .rimage {
     height: 250px;
     width: 250px;
@@ -252,22 +218,22 @@ h3 {
     justify-content: flex-end;
 }
 
-/* Images that float left */
-
+/* Images that align left */
 .limage {
+    height: 250px;
+    width: 250px;
+    margin: 10px;
+    display: flex;
+    justify-content: flex-start;
+}
+/* Images that center, sizes them */
+.cimage {
     height: 250px;
     width: 250px;
     margin: 10px;
 }
 
-/* Text  */
-
-.text {
-    width: 40%;
-}
-
 /* Boxes within the packages section of the site */
-
 .package {
     flex-flow: column wrap;
     overflow: auto;
@@ -282,7 +248,6 @@ h3 {
 }
 
 /* Buttons within the packages boxes */
-
 .button1 {
     color: whitesmoke;
     background-color: #8a0616;
@@ -313,22 +278,9 @@ h3 {
 }
 
 /* Used for checking spacing */
-
 .border {
     border: hotpink 2px;
     border-style: dashed;
 }
 
-/* The sticky class is added to the navbar with JS when it reaches its scroll position */
 
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%
-}
-
-/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-
-.sticky+.myContent {
-    padding-top: 50px;
-}

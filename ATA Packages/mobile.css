@@ -1,8 +1,7 @@
 @media screen and (max-width: 824px) 
 {
-  
-    /* Add a black background color to the top navigation */
-  .mobileHeader
+  /* Add a black background color to the top navigation that sticks as you scroll */
+  .mobileHeader 
   {
     scroll-behavior: auto;
     position: fixed;
@@ -13,37 +12,6 @@
     top: 0;
     width: 100%;
   }
-
-  .nav-container .primary-wrapper 
-  {
-    display: none;
-  }
-
-  /* Style the links inside the navigation bar */
-   /* Add an active class to highlight the current page */
-  .active 
-  {
-    background-color: #4CAF50;
-    color: white;
-  }
-  
-  .sidenav 
-  {
-    display: none;
-  }
-
-  .evensection 
-  {
-    width:auto;
-    margin:15px;
-  }
-
-  .oddsection 
-  {
-    width:auto;
-    margin:15px;
-  } 
-
   /* This accounts for the logo and nav at the top when using anchor links */
   span
   {
@@ -54,41 +22,32 @@
     visibility: hidden; 
     pointer-events: none;
   }
-  /* Hides desktop version of the slide */
-  .desktopSlide
+   /* positions the logo to the left */
+  .headerLogo 
   {
-    display: none;
+    display: flex;
+    justify-content: flex-start;
+    /* border: hotpink 2px solid; */
   }
-  /* Shows mobile version of the slide */
-  .mobileSlide
-  {
-    margin-top: 0px;
-    display:flex;
-   
+  /* changes the dimensions of the logo for mobile */
+  .logo {
+    width: 175px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
   }
-  /* Adjusts size of slideshow for mobile */
-  .slideshow-container 
-  {
+  
+  /* formats the unordered list that is the mobile nav */
+  ul.nav {
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
     width: 100%;
-    margin-left: 0;
-    margin-top: 0;
-    border: hotpink 2px solid;
-    height: 300px;
-
-  }
-  /* 1 image version of the slideshow */
-  .mySlidesMobile
-  {
-    z-index: -1;
-    max-width: 300px;
-    height: 300px;
   }
  
-
-}
-
-@media screen and (max-width: 823px) 
-{ 
   .nav li { 
     display:inline; 
     font-size: .7em;
@@ -106,111 +65,95 @@
   .packages {
     color:#ff5216;
   }
+  
   .nav a {
     display:inline-block;
-    padding:10px 25px 25px;
+    padding:10px 15px 25px;
     border-bottom:1px solid #ccc;
     margin-bottom:-1px;
     text-align:center;
+    font-size: 1.5em;
+    font-weight: bold;
   }
-  .headerLogo
-  {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    /* border: hotpink 2px solid; */
-  }
-
-  .logo
-  {
-    width: 175px;
-    height: 100px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
- 
-  }
-
-  .mobileSlide
-  {
-    margin-top: 180px;
-    display:flex;
+  .nav a:hover {
+    border-bottom: 1px solid #0cf;
+    cursor: pointer;
   }
   
-  .nav-container.primary-wrapper 
+  /* prevents the links from changing color once they are visited */
+  ul.nav li a,
+  ul.nav li a:visited {
+    text-decoration: none;
+  }
+
+  /* hides the side nav */
+  .sidenav 
   {
     display: none;
   }
-  
-  /* Add an active class to highlight the current page */
-  .active {
-    background-color: #4CAF50;
-    color: white;
+
+  /* Hides desktop version of the slide */
+  .desktopslideshow-container
+  {
+    display: none;
   }
 
-  /* this adjusts the width of text on mobile to fill the screen */
-  .text
+  /* Mobile version of the slideshow */
+  .mobileslideshow-container 
   {
-      width:100%;
+    width: 100%;
+    margin-top: 180px;
+    /* border: green 2px solid; */
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
   }
-  /* this alternates image and text in the wrap */
-  .rimage 
-  {
-    order: -1;
-  }
-}    
 
-@media only screen and (max-width: 300px) 
-{
-  .logo
+ /* groups images with chevrons */
+  .mobileSlideGroup
   {
-    height: 50px;
+    display: flex;
+    align-items: center;  
+    /* border: yellow 2px solid; */
   }
-/* 
-  .mobileSlide
+
+/* Mobile version of the slider, only 1 image */
+  .mySlidesMobile
   {
-    margin-top: 75px;
-  } */
-  .text 
-  {
-    margin: 20px;
+    justify-content: center;
+    z-index: -1;
+    max-width: 300px;
+    height: 300px;
   }
-  .evensection
+
+  /* extends the section to full screen since side nav is gone*/
+  .evensection 
   {
-      width:100%;  
-      margin-left: 0;
+    width:auto;
+    margin:15px;
   }
+
+  /* extends the section to full screen since side nav is gone*/
   .oddsection 
   {
-      width:100%;
-      margin-left: 0;
-  }
-  .desktopSlide
-  {
-      display: none;
-  }
-  .mobileSlide
-  {
-      display:flex;
-      margin-left: 0;
-  }
-  .rimage 
-  {
-    height: 175px;
-    width: 175px;
-    margin: 5px;
-  }
-  /* Images that float left */
-  .limage 
-  {
-      height: 175px;
-      width: 175px;
-      margin: 5px;
-  }
+    width:auto;
+    margin:15px;
+  } 
+
+ /* this adjusts the width of text on mobile to fill the screen */
+ .text
+ {
+    width:100%;
+ }
+
+ /* this alternates image and text in the wrap */
+ .rimage 
+ {
+   order:1;
+ }
 }
-  
-
-
 
 
   
