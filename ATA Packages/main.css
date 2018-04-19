@@ -20,6 +20,7 @@
 body {
     background-color: #1c1c1c;
     font-family: Abel, sans-serif;
+    font-size: 18px;
 }
   /* This accounts for the logo and nav at the top when using anchor links */
 span
@@ -38,7 +39,7 @@ span
 
 /* format for the side nav, desktop/tablet only */
 #mySidenav a {
-    position: absolute;
+    position: fixed;
     left: -10px;
     transition: 0.3s;
     padding: 15px;
@@ -140,6 +141,7 @@ span
     width: 32.9%;
     height: 300px;
     max-width: 300px;
+    border-radius: 5px 5px 5px 5px;
     /* border: greenyellow 2px solid; */
 }
 
@@ -205,12 +207,14 @@ span
     margin-right: 10px;
     padding: 10px;
     overflow: hidden;
+    border-radius: 5px 5px 5px 5px;
     /* border: green 2px solid; */
 }
 
 /* section headers */
 h3 {
     padding-left: 15px;
+    font-weight: 1500px;
 }
 
 /* Content for the sections allows different flex alignment within each section after the title */
@@ -221,10 +225,14 @@ h3 {
     align-items: center;
     /* border:hotpink 2px solid; */
 }
+.learn {
+    border-radius: 5px 5px 5px 5px;
+}
 
 /* Text  */
 .text {
     width: 50%;
+    font-size: 18px;
 }
 
 /* Images that align right */
@@ -234,6 +242,7 @@ h3 {
     margin: 10px;
     display: flex;
     justify-content: flex-end;
+    border-radius: 5px 5px 5px 5px;
 }
 
 /* Images that align left */
@@ -243,12 +252,23 @@ h3 {
     margin: 10px;
     display: flex;
     justify-content: flex-start;
+    border-radius: 5px 5px 5px 5px;
 }
 /* Images that center, sizes them */
 .cimage {
     height: 250px;
     width: 250px;
     margin: 10px;
+    border-radius: 5px 5px 5px 5px;
+}
+.bimage {
+    height: 250px;
+    width: 250px;
+    margin: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align: left;
+    border-radius: 5px 5px 5px 5px;
 }
 
 /* Boxes within the packages section of the site */
