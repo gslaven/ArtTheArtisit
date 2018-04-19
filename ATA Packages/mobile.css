@@ -3,6 +3,9 @@
   /* Add a black background color to the top navigation that sticks as you scroll */
   .mobileHeader 
   {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     scroll-behavior: auto;
     position: fixed;
     z-index: 100;
@@ -11,6 +14,9 @@
     left: 0;
     top: 0;
     width: 100%;
+  }
+  .headerLogo {
+    display: none;
   }
   /* This accounts for the logo and nav at the top when using anchor links */
   span
@@ -45,7 +51,7 @@
     list-style: none;
     text-align: center;
     border-bottom: 1px solid #ccc;
-    width: 100%;
+    /* width: 100%; */
   }
  
   .nav li { 
@@ -68,11 +74,11 @@
   
   .nav a {
     display:inline-block;
-    padding:10px 15px 25px;
+    padding:10px 10px 10px;
     border-bottom:1px solid #ccc;
     margin-bottom:-1px;
     text-align:center;
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: bold;
   }
   .nav a:hover {

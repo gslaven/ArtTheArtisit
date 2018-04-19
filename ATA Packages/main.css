@@ -1,11 +1,19 @@
 /*ASAP logo*/
-.logo {
+.headerLogo {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-around;
+    scroll-behavior: auto;
+    position: fixed;
+    z-index: 10;
+    background: #1c1c1c;
+    width: 100%;
+    top: 0;
+}
+.logo {
     width: 350px;
     height: 200px;
     background: #1c1c1c;
-    margin: 10px;
+    margin: 15px;
 }
 
 /* General style for the page */
@@ -13,7 +21,16 @@ body {
     background-color: #1c1c1c;
     font-family: Abel, sans-serif;
 }
-
+  /* This accounts for the logo and nav at the top when using anchor links */
+span
+  {
+    display: block; 
+    content: " "; 
+    height: 200px;      
+    margin-top: -200px;   
+    visibility: hidden; 
+    pointer-events: none;
+  }
 /* Hides the mobile nav on desktop */
 .nav a {
     display: none;
@@ -33,7 +50,8 @@ body {
     text-align: center;
     margin-top: 40px;
     scroll-behavior: auto;
-    z-index: 1;
+    z-index: 15;
+    /* border: hotpink solid 2px; */
 }
 
 /* Brings the side nav out when hovered on */
