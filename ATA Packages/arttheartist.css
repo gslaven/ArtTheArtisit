@@ -1,0 +1,245 @@
+body {
+    background-color: #3C4858;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+
+.myContent{
+    margin: 0 auto;
+    width: 50%;
+}
+
+#mySidenav a {
+    position: absolute;
+    left: -10px;
+    transition: 0.3s;
+    padding: 15px;
+    width: 100px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    text-align: center;
+    margin-top: 40px;
+    scroll-behavior: auto;
+}
+
+#mySidenav a:hover {
+    left: 0;
+}
+
+#whyArt {
+    top: 20px;
+    background-color: #f8b700;
+}
+
+#learnArt {
+    top: 80px;
+    background-color: #ff5216;
+}
+
+#teachArt {
+    top: 140px;
+    background-color: #8a0616;
+}
+
+#packages {
+    top: 200px;
+    background-color: #6da331;
+}
+
+#testimonials {
+    top: 260px;
+    background-color: #256697;
+}
+
+.oddsection {
+    background-color: #3C4858;
+    color: white;
+    height: 500px;
+    padding: 20px;
+    margin-left: 200px;
+    overflow: auto;
+}
+
+.evensection {
+    background-color: white;
+    color: #3C4858;
+    height: 500px;
+    padding: 20px;
+    margin-left: 200px;
+    overflow: auto;
+}
+
+.rimage {
+    height: 250px;
+    width: 250px;
+    margin: 20px;
+    vertical-align: baseline;
+    float: right;
+}
+
+.limage {
+    height: 250px;
+    width: 250px;
+    margin: 20px;
+    vertical-align: baseline;
+    float: left;
+}
+
+.package {
+    vertical-align: bottom;
+    overflow: auto;
+    border: 1px solid white;
+    color: white;
+    text-align: center;
+    margin: 10px;
+    font-family: Verdana;
+    float: left;
+    min-height: 290px;
+    padding: 10px;
+    width: 255;
+}
+
+.button1 {
+    color: white;
+    font-family: Verdana;
+    background-color: #8a0616;
+    width: auto;
+    border-radius: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    border: 2px solid whitesmoke;
+}
+
+.button2 {
+    color: white;
+    font-family: Verdana;
+    background-color: #6da331;
+    width: auto;
+    border-radius: 5px;
+    padding: 5px;
+    border: 2px solid whitesmoke;
+}
+
+.button3 {
+    color: white;
+    font-family: Verdana;
+    background-color: #256697;
+    width: auto;
+    border-radius: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    border: 2px solid whitesmoke;
+}
+
+/* Used for checking spacing */
+
+.checkSpacing {
+    border: red;
+    border-style: dashed;
+}
+
+/* Page content */
+
+.myContent {
+    padding: 16px;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+
+.sticky+.myContent {
+    padding-top: 60px;
+}
+
+/* Slideshow container */
+
+.slideshow-container {
+    width: 700px;
+    height: 300px;
+    position: relative;
+    margin-left: 30%;
+}
+
+/* Next & previous buttons */
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* The dots/bullets/indicators */
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: rgba(22, 170, 76); 
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}

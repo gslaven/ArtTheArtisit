@@ -1,0 +1,260 @@
+
+body 
+{
+background-color: #1c1c1c;
+font-family: Abel, sans-serif;
+}
+.box
+{
+display: flex;
+flex-direction: column;
+align-items:center;
+justify-content: space-around;
+}
+
+.oddsection {
+background-color: #1c1c1c;
+display: flex;
+flex-direction: column;
+color: whitesmoke;
+min-height: 450px;
+padding: 10px;
+align-self: center;
+justify-content: flex-start;
+margin-left: 200px;
+margin-top:25px;
+width:80%;
+border: yellow 2px solid;
+}
+
+.evensection {
+display: flex;
+flex-direction: column;
+background-color: #1c1c1c;
+color:whitesmoke;
+min-height: 500px;
+padding: 10px;
+align-self: center;
+justify-content: flex-start;
+margin-left: 200px;
+margin-top: 25px;
+width:80%;
+border: green 2px solid;
+}
+
+.slideshow-container {
+    margin-left: 200px;
+    height: auto;
+    position: relative;
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 1;
+    
+    }
+    .mySlides
+    {
+    /* justify-content: center; */
+    z-index: -1;
+    flex-wrap: nowrap;
+    max-height: 300px;
+    }
+    .images
+    {
+    align-self: center;
+    width:32.9%; 
+    max-height:300px; 
+    max-width:300px;
+    flex-wrap: nowrap;
+    }
+
+    .mySlidesMobile
+    {
+    justify-content: center;
+    z-index: -1;
+    /* width:100%; */
+    max-height: 300px;
+    }
+    /* Next & previous buttons */
+    .leftChevron
+    {
+    font-size: 2em; 
+    color:white; 
+    float:left;
+    cursor: pointer;
+    padding:4px;
+    }
+    .rightChevron
+    {
+    font-size: 2em; 
+    color:white; 
+    float:right;
+    cursor: pointer;
+    padding:4px;
+    }
+
+.rimage {
+height: 250px;
+width: 250px;
+align-self: flex-end;
+}
+
+.limage {
+height: 250px;
+width: 250px;
+margin: 20px;
+/* vertical-align: baseline; */
+float: left;
+}
+
+.package {
+flex-flow: column wrap;
+overflow: auto;
+border: 1px solid white;
+color: whitesmoke;
+text-align: center;
+margin: 10px;
+float: left;
+min-height: 290px;
+width: 200px;
+padding: 10px;
+}
+
+.button1 {
+color: whitesmoke;
+background-color: #8a0616;
+width: auto;
+border-radius: 5px;
+border-radius: 5px;
+padding: 5px;
+border: 2px solid whitesmoke;
+}
+
+.button2 {
+color: whitesmoke;
+background-color: #6da331;
+width: auto;
+border-radius: 5px;
+padding: 5px;
+border: 2px solid whitesmoke;
+}
+
+.button3 {
+color: whitesmoke;
+background-color: #256697;
+width: auto;
+border-radius: 5px;
+border-radius: 5px;
+padding: 5px;
+border: 2px solid whitesmoke;
+}
+
+/* Used for checking spacing */
+
+.border {
+border: hotpink 2px;
+border-style: dashed;
+}
+
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+
+.sticky {
+position: fixed;
+top: 0;
+width: 100%
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+
+.sticky+.myContent {
+padding-top: 50px;
+}
+
+/* Slideshow container */
+
+
+
+.mobileSlide
+{
+display: none;
+/* visibility: hidden; */
+}
+
+
+.fade {
+-webkit-animation-name: fade;
+-webkit-animation-duration: 1.5s;
+animation-name: fade;
+animation-duration: 1.5s;
+}
+
+
+
+
+@media only screen and (max-width: 300px) {
+.text 
+{
+    font-size: 11px;
+    padding: 50%;
+}
+.evensection
+{
+    width:100%;  
+    margin-left: 0;
+}
+.oddsection 
+{
+    width:100%;
+    margin-left: 0;
+}
+.desktopSlide
+{
+    display: none;
+}
+.mobileSlide
+{
+    display:flex;
+    margin-left: 0;
+}
+}
+
+@media screen and (max-width: 824px) {
+div#mySidenav
+{
+    display: none;
+    padding: 30%;
+    box-sizing: border-box;
+}
+.evensection 
+{
+    width:100%;
+    margin-left: 0;
+}
+.oddsection 
+{
+    width:100%;
+    margin-left: 0;
+} 
+.desktopSlide
+{
+    display: none;
+}
+.mobileSlide
+{
+    display:flex;
+}
+.slideshow-container 
+{
+    width: 100%;
+    margin-left: 0;
+}
+.mySlidesMobile
+{
+    z-index: -1;
+    max-width: 300px;
+    max-height: 300px;
+}
+}
